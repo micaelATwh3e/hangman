@@ -10,6 +10,8 @@ tips kan vara att börja med att skriva vokalet som inte är så många och gara
 
 
 3st branches.
-main  - innehåller ett hänhga gubbe där ordet välj från en ordlista. 100 ord i listan\n
-extra_future - Samma som main men man får som användare ange ett ord åt spelaren.\n
+main  - innehåller ett hänhga gubbe där ordet välj från en ordlista. 100 ord i listan.
+
+extra_future - Samma som main men man får som användare ange ett ord åt spelaren.
+
 ai - samma som extra_future, men det är gemini som spelar spelet. Kräver en api nyckel.
