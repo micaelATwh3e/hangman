@@ -1,6 +1,4 @@
-# Inlämningsuppgifter till pyhtonkursen.
-
-2025-02-03 Slängde in hänga gubben. (hangban.py)
+# Inlämningsuppgifter till pyhtonkursen (hänga gubbe).
 
 Starta programet genom python hangman.py
 
