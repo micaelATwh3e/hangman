@@ -1,6 +1,9 @@
+#-*- coding: utf-8 -*-
+import google.generativeai as genai
 import random
 import os
 import re
+from time import sleep
 
 # Tömmer skärmen på innehåll
 clear = lambda: os.system('cls')
@@ -12,7 +15,7 @@ clear()
 
 # Samtliga olika utseenden på den hängande gubben...
 row0= ""
-row7_1 = "HANGMAN (100 most common swedish words.. If you ask Gemini)"
+row7_1 = "HANGMAN"
 row6_1 = "   ____"
 row5_1 = "  |"
 row5_2 = "  |/"
@@ -152,6 +155,31 @@ def ConvertLine(UsedChar, Word):
         i += 1
     return(HiddenName, CharLeft)
 
+# Funktionen som ber ai gissa en bokstav.
+def guess(status, used):
+    #Some settings for ai.
+    genai.configure(api_key="din api key")
+    generation_config = {
+        "temperature": 1,
+        "top_p": 0.95,
+        "top_k": 64,
+        "max_output_tokens": 20000,
+        "response_mime_type": "text/plain",
+    }
+
+    model = genai.GenerativeModel(
+        model_name="gemini-1.5-flash",
+        generation_config=generation_config,
+    )
+    chat_session = model.start_chat(
+        history=[
+        ]
+    )
+    response = model.generate_content(
+        f"Du ska spela hänga gubbe på dessa streck/bokstäver: {status}\nDu har tidigare gissat: {used}\nGissa en bokstav: Tänk på att det är ett riktigt ord det ska bli. Enbart en bokstav inget annat!"
+    )
+    return(response.text)
+
 #Sätter variablarna tomma vid starten.
 UsedChar = ""
 tries = 0
@@ -173,7 +201,11 @@ while True:
     # Kollar om ordet är löst
     if not CharLeft == 0:
         if not tries == 11:
-            x = input("Enter a Char: ")
+            #Ber ai gissa en bokstav.
+            sleep(3)
+            x = str(guess(HiddenName, UsedChar)).replace(" ", "").replace("\n", "")
+
+            #x = input("Enter a Char: ")
             # Kollar om användaren lyckades med att skriva en bokstav.
         
             if len(x) == 1:
