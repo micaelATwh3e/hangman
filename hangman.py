@@ -176,7 +176,7 @@ def guess(status, used):
         ]
     )
     response = model.generate_content(
-        f"Du ska spela hänga gubbe på dessa streck/bokstäver: {status}\nDu har tidigare gissat: {used}\nGissa en bokstav: Tänk på att det är ett riktigt ord det ska bli. Enbart en bokstav inget annat!"
+        f"Du ska spela hänga gubbe på dessa streck/bokstäver: {status}\nDu har tidigare sagt: {used}\nSäg en bokstav som du tror saknas. Validera att bokstaven du tänker säga i kombination med dom andra bokstäverna i {status} skapar ett riktigt ord. Enbart en bokstav inget annat!"
     )
     return(response.text)
 
