@@ -203,7 +203,7 @@ while True:
         if not tries == 11:
             #Ber ai gissa en bokstav.
             sleep(3)
-            x = str(guess(HiddenName, UsedChar)).replace(" ", "").replace("\n", "")
+            x = str(guess(HiddenName, UsedChar)).replace(" ", "").replace("\n", "").lower()
 
             #x = input("Enter a Char: ")
             # Kollar om användaren lyckades med att skriva en bokstav.
