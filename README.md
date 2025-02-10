@@ -7,7 +7,7 @@ Spelet kommer välja ett av 100st förbereda ord från ordlistan i spelet. Du sk
 tips kan vara att börja med att skriva vokalet som inte är så många och garanterat finns i orden. Sen när man har någon/några träffas kan man skriva andra bokstäver som oftas fungerar i kombination med vokalen. och vips så har du gissat ordet.
 
 
-3st branches.
+4st branches.
 
 main  - innehåller ett hänhga gubbe där ordet välj från en ordlista. 100 ord i listan.
 
