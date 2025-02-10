@@ -14,3 +14,5 @@ main  - innehåller ett hänhga gubbe där ordet välj från en ordlista. 100 or
 extra_future - Samma som main men man får som användare ange ett ord åt spelaren.
 
 ai - samma som extra_future, men det är gemini som spelar spelet. Kräver en api nyckel.
+
+gui - Addade en hänga gubbe i tkinter också. samma function som main.
