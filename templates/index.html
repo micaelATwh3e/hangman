@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hangman</title>
+</head>
+<body>
+    <h1>Hangman</h1>
+    <pre>{{ hangman_art }}</pre>
+    <h2>{{ hidden_name }}</h2>
+    <p>Used characters: {{ used_char }}</p>
+
+    {% if result %}
+    <p>{{ result }}</p>
+    <a href="{{ url_for('new_game') }}">Start New Game</a>  {% else %}
+    <form method="POST">
+        <input type="text" name="guess" maxlength="1">
+        <button type="submit">Guess</button>
+    </form>
+    {% endif %}
+
+    <script>
+        console.log("The word is: {{ word }}");
+    </script>
+</body>
+</html>
