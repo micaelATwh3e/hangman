@@ -16,3 +16,5 @@ extra_future - Samma som main men man får som användare ange ett ord åt spela
 ai - samma som extra_future, men det är gemini som spelar spelet. Kräver en api nyckel.
 
 gui - Addade en hänga gubbe i tkinter också. samma function som main.
+
+flask - Addade en hänga gubbe i flask också. samma function som main.
