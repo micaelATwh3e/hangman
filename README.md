@@ -1,4 +1,4 @@
-# Inlämningsuppgifter till pyhtonkursen (hänga gubbe).
+# Hangman!
 
 Starta programet genom python hangman.py
 
